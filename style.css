@@ -22,8 +22,6 @@ body {
     justify-content: center;
 }
 
-
-
 .main-board {
     width: 95%;
     height: 95%;
@@ -34,11 +32,36 @@ body {
     align-items: center;
     justify-items: center;
     text-align: center;
+    font-size: 1.1rem;
+    font-weight: 100;
+    word-spacing: 5px;
+    color: #383838;
 }
 
 .new-game {
     grid-column: 3;
     grid-row: 1;
+}
+
+.bi{
+    color: #fa5353;
+}
+
+.bi.bi-record-fill{
+    display: none;
+}
+
+.bi.bi-record-fill.active{
+    display: inline;
+    font-size: 1.2rem;
+}
+
+.bi-arrow-repeat, .bi-box-arrow-in-down {
+    font-size: 1.4rem;
+}
+
+.player1, .player2 {
+    font-size: 2rem;
 }
 
 .player1 {
@@ -49,6 +72,11 @@ body {
 .player2 {
     grid-column: 4;
     grid-row: 2;
+}
+
+.player1-score, .player2-score {
+    font-size: 5rem;
+    color: #fa5353;
 }
 
 .player1-score {
@@ -64,6 +92,7 @@ body {
 .dice {
     grid-column: 3;
     grid-row: 3;
+    font-size: 6.4rem;
 }
 
 .player1-current {
@@ -74,6 +103,23 @@ body {
 .player2-current {
     grid-column: 4;
     grid-row: 5;
+}
+
+.player1-current, .player2-current {
+    padding: 10px 30px;
+    background-color: #fa5353;
+    border-radius: 5px;
+}
+
+.current {
+    color: #383838;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.current-score {
+    color: #ffffff;
+    font-size: 1.4rem;
 }
 
 .game-options {
