@@ -16,29 +16,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.main-screen {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .main-board {
     width: 95%;
     height: 95%;
-    display: flex;
+    background: linear-gradient(90deg, #cccccc 50%, #ffffff 50%);
 }
 
-.board-player1 {
-    flex: 1;
-    background-color: rgb(230, 230, 230);
-}
 
-.board-player2 {
-    flex: 1;
-    background-color: #fff;
-}
 
