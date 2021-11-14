@@ -27,6 +27,9 @@ body {
     width: 95%;
     height: 95%;
     background: linear-gradient(90deg, #cccccc 50%, #ffffff 50%);
+    display: grid;
+    grid-template-columns: 10% 30% 20% 30% 10%;
+    grid-template-rows: 10% 10% 20% 20% 20% 20%;
 }
 
 
