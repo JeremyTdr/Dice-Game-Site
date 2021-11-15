@@ -95,6 +95,11 @@ body {
     font-size: 6.4rem;
 }
 
+.dice-img {
+    width: 100px;
+    height: auto;
+}
+
 .player1-current {
     grid-column: 2;
     grid-row: 5;
