@@ -49,6 +49,10 @@ body {
     color: #fa5353;
 }
 
+.bi.bi-plus-circle, .bi.bi-arrow-repeat, .bi.bi-box-arrow-in-down  {
+    cursor: pointer;
+}
+
 .bi.bi-record-fill{
     display: none;
 }
