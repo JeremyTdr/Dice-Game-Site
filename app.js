@@ -12,24 +12,29 @@ let images = ["dice-1.svg","dice-2.svg","dice-3.svg","dice-4.svg","dice-5.svg","
 
 let diceImg = document.querySelector('.dice-img')
 
+globalP1 = 0
+globalP2 = 0
 currentP1 = 0
+currentP2 = 0
 
-globalPlayer1.innerHTML = 0
-globalPlayer2.innerHTML = 0
+globalPlayer1.innerHTML = globalP1
+globalPlayer2.innerHTML = globalP2
 currentPlayer1.innerHTML = currentP1
-currentPlayer2.innerHTML = 0
+currentPlayer2.innerHTML = currentP2
 
-newGame.addEventListener('click', () => {
-    globalPlayer1.innerHTML = 0
-    globalPlayer2.innerHTML = 0
-    currentP1 = 0
-    currentPlayer2.innerHTML = 0
+const playNewGame = () => {
+    newGame.addEventListener('click', () => {
+        globalP1 = 0
+        globalP2 = 0
+        currentP1 = 0
+        currentP2 = 0
 
-    player.classList.remove('active')
-    player[0].classList.add('active')
-
-    
-})
+        globalPlayer1.innerHTML = globalP1
+        globalPlayer2.innerHTML = globalP2
+        currentPlayer1.innerHTML = currentP1
+        currentPlayer2.innerHTML = currentP2
+    })
+}
 
 const playDice = () => {
     rollDice.addEventListener('click', () => {
@@ -44,6 +49,17 @@ const playDice = () => {
     })
 }
 
+const holdGame = () => {
+    holdDice.addEventListener('click', () => {
+        globalP1 += currentP1
+        globalPlayer1.innerHTML = globalP1
+    })
+}
+
+playNewGame()
 playDice()
+holdGame()
+
+
 
 
