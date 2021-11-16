@@ -1,64 +1,68 @@
+/*--- Variables pour les différents éléments du plateau de jeu ---*/
 const newGame = document.getElementById('new_game');
 const player = document.querySelectorAll('.player');
-let globalPlayer1 = document.querySelector('.player1-score');
-let globalPlayer2 = document.querySelector('.player2-score');
+let globalPlayers = document.querySelectorAll('.player-score');
 let dice = document.querySelector('.dice-img');
-let currentPlayer1 = document.querySelector('.player1-current .current-score');
-let currentPlayer2 = document.querySelector('.player2-current .current-score');
+let currentPlayers = document.querySelectorAll('.current-score');
 const rollDice = document.getElementById('roll-dice');
 const holdDice = document.getElementById('hold-dice');
 
+/*--- Tableau et variable des images du Dé ---*/
 let images = ["dice-1.svg","dice-2.svg","dice-3.svg","dice-4.svg","dice-5.svg","dice-6.svg"]
-
 let diceImg = document.querySelector('.dice-img')
 
-globalP1 = 0
-globalP2 = 0
-currentP1 = 0
-currentP2 = 0
+/*--- Variables supplémentaires pour les algos ---*/
+let globalScore, currentScore
 
-globalPlayer1.innerHTML = globalP1
-globalPlayer2.innerHTML = globalP2
-currentPlayer1.innerHTML = currentP1
-currentPlayer2.innerHTML = currentP2
 
+
+
+/*--- Fonction New Game ---*/
 const playNewGame = () => {
     newGame.addEventListener('click', () => {
-        globalP1 = 0
-        globalP2 = 0
-        currentP1 = 0
-        currentP2 = 0
-
-        globalPlayer1.innerHTML = globalP1
-        globalPlayer2.innerHTML = globalP2
-        currentPlayer1.innerHTML = currentP1
-        currentPlayer2.innerHTML = currentP2
+        globalPlayers.forEach(globalPlayer => {
+            globalPlayer.textContent = 0
+        })
+        currentPlayers.forEach(currentPlayer => {
+            currentPlayer.textContent = 0
+        })
+        diceImg.src = './images/dice-1.svg'
     })
 }
 
-const playDice = () => {
+/*--- Fonction Dé random ---*/
+playDice = () => {
     rollDice.addEventListener('click', () => {
         let diceValue = Math.floor(Math.random() * 6) + 1
-        diceImg.src=`./images/dice-${diceValue}.svg`;
+        diceImg.src=`./images/dice-${diceValue}.svg`
+
         if (diceValue === 1){
-            currentP1 = 0
+            currentScore = 0
         } else {
-            currentP1 += diceValue
+            currentScore += diceValue
         }
-        currentPlayer1.innerHTML = currentP1
+        currentPlayers.forEach(currentPlayer => {
+            if (currentPlayer.classList.contains('active')) {
+                currentPlayer.textContent = currentScore
+            } 
+        })
     })
 }
 
+/*
 const holdGame = () => {
     holdDice.addEventListener('click', () => {
-        globalP1 += currentP1
-        globalPlayer1.innerHTML = globalP1
+        globalPlayer += currentPlayer
+        globalPText.textContent = globalPlayer
     })
 }
+*/
 
 playNewGame()
 playDice()
-holdGame()
+
+
+
 
 
 

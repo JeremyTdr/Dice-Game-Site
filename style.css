@@ -80,17 +80,17 @@ body {
     grid-row: 2;
 }
 
-.player1-score, .player2-score {
+.player-score {
     font-size: 5rem;
     color: #fa5353;
 }
 
-.player1-score {
+.player-score.one {
     grid-column: 2;
     grid-row: 3;
 }
 
-.player2-score {
+.player-score.two {
     grid-column: 4;
     grid-row: 3;
 }
