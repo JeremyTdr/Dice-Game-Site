@@ -21,27 +21,34 @@ window.onload = () => {
 
 
 
-    /*--- Fonction New Game ---*/
-    const playNewGame = () => {
-        newGame.addEventListener('click', () => {
-            let globalScoreP1 = 0
-            let globalScoreP2 = 0
-            let currentScore = 0
-            let actualPlayer = 0
-
-            globalPlayers.forEach(globalPlayer => {
-                globalPlayer.textContent = 0
-            })
-            currentPlayers.forEach(currentPlayer => {
-                currentPlayer.textContent = 0
-            })
-
-            diceImg.src = './images/dice-1.svg'
-        })
+    /*--- Fonction Play ---*/
+    const playGame = () => {
+        initGame()
+        playDice()
+        holdGame()
+        playNewGame()
     }
 
 
-    playDice = () => {
+    /*--- Fonction Initialization ---*/
+    const initGame = () => {
+        globalScoreP1 = 0
+        globalScoreP2 = 0
+        currentScore = 0
+        actualPlayer = 0
+
+        globalPlayers.forEach(globalPlayer => {
+            globalPlayer.textContent = 0
+        })
+        currentPlayers.forEach(currentPlayer => {
+            currentPlayer.textContent = 0
+        })
+
+        diceImg.src = './images/dice-6.svg'
+    }
+
+    /*--- Fonction Roll dice ---*/
+    const playDice = () => {
         rollDice.addEventListener('click', () => {
             let diceValue = Math.floor(Math.random() * 6) + 1
             diceImg.src=`./images/dice-${diceValue}.svg`
@@ -62,27 +69,7 @@ window.onload = () => {
         })
     }
 
-    /*--- Fonction Dé random 
-    playDice = () => {
-        rollDice.addEventListener('click', () => {
-            let diceValue = Math.floor(Math.random() * 6) + 1
-            diceImg.src=`./images/dice-${diceValue}.svg`
-
-            if (diceValue === 1){
-                currentScore = 0
-            } else {
-                currentScore += diceValue
-            }
-            currentPlayers.forEach(currentPlayer => {
-                if (currentPlayer.classList.contains('active')) {
-                    currentPlayer.textContent = currentScore
-                } 
-            })
-        })
-    }
-    ---*/
-
-    
+    /*--- Fonction Hold button ---*/
     const holdGame = () => {
         holdDice.addEventListener('click', () => {
                 if (actualPlayer == 0) {
@@ -101,11 +88,14 @@ window.onload = () => {
         })
     }
 
+    /*--- Fonction New Game ---*/
+    const playNewGame = () => {
+        newGame.addEventListener('click', () => {
+            initGame()
+        })   
+    }
 
-
-    playDice()
-    holdGame()
-    playNewGame()
+    playGame()
 
 }
 
