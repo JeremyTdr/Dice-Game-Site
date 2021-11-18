@@ -8,6 +8,7 @@ window.onload = () => {
     let currentPlayers = document.querySelectorAll('.current-score');
     const rollDice = document.getElementById('roll-dice');
     const holdDice = document.getElementById('hold-dice');
+    const mainBoard = document.querySelector('.main-board')
 
     /*--- Tableau et variable des images du Dé ---*/
     let images = ["dice-1.svg","dice-2.svg","dice-3.svg","dice-4.svg","dice-5.svg","dice-6.svg"]
@@ -44,6 +45,8 @@ window.onload = () => {
             currentPlayer.textContent = 0
         })
 
+        switchToPlayer1()
+
         diceImg.src = './images/dice-6.svg'
     }
 
@@ -57,10 +60,10 @@ window.onload = () => {
                 currentScore = 0
                 if (actualPlayer == 0) {
                     currentPlayers[0].textContent = currentScore
-                    actualPlayer = 1
+                    switchToPlayer2()
                 } else {
                     currentPlayers[1].textContent = currentScore
-                    actualPlayer = 0
+                    switchToPlayer1()
                 }
             } else {
                 currentScore += diceValue
@@ -77,13 +80,14 @@ window.onload = () => {
                     globalPlayers[0].textContent = globalScoreP1
                     currentScore = 0
                     currentPlayers[0].textContent = currentScore
-                    actualPlayer = 1
+                    switchToPlayer2()
+
                 } else {
                     globalScoreP2 += currentScore
                     globalPlayers[1].textContent = globalScoreP2
                     currentScore = 0
                     currentPlayers[1].textContent = currentScore
-                    actualPlayer = 0
+                    switchToPlayer1()
                 }
         })
     }
@@ -94,6 +98,22 @@ window.onload = () => {
             initGame()
         })   
     }
+
+    /*--- Fonction Switch Players ---*/
+    const switchToPlayer1 = () => {
+        player[1].classList.remove('active')
+        player[0].classList.add('active')
+        mainBoard.style.background = 'linear-gradient(90deg, #cccccc 50%, #ffffff 50%)'
+        actualPlayer = 0
+    }
+
+    const switchToPlayer2 = () => {
+        player[0].classList.remove('active')
+        player[1].classList.add('active')
+        mainBoard.style.background = 'linear-gradient(270deg, #cccccc 50%, #ffffff 50%)'
+        actualPlayer = 1
+    }
+
 
     playGame()
 
