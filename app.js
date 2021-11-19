@@ -1,6 +1,8 @@
 window.onload = () => {
   /*--- Variables pour les différents éléments du plateau de jeu ---*/
   const newGame = document.getElementById("new_game");
+  let player1 = document.querySelector(".player1");
+  let player2 = document.querySelector(".player2");
   const player = document.querySelectorAll(".player");
   let globalPlayers = document.querySelectorAll(".player-score");
   let dice = document.querySelector(".dice-img");
@@ -9,6 +11,7 @@ window.onload = () => {
   const holdDice = document.getElementById("hold-dice");
   const mainBoard = document.querySelector(".main-board");
   const winModal = document.querySelector(".win-modal");
+  let winnerGame = document.getElementById("winner-game");
   const closeModal = document.querySelector(".close");
   const modalNewGame = document.getElementById("modal-newgame");
 
@@ -130,6 +133,12 @@ window.onload = () => {
   const winnerModal = () => {
     if (globalScoreP1 >= 20 || globalScoreP2 >= 20) {
       winModal.style.display = "block";
+      if (globalScoreP1 >= 20) {
+        winnerGame.textContent = "Player 1 win this game";
+      } else {
+        winnerGame.textContent = "Player 2 win this game";
+      }
+
       closeModal.addEventListener("click", () => {
         winModal.style.display = "none";
       });
