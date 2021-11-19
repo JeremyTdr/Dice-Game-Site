@@ -20,6 +20,39 @@
   </head>
 
   <body>
+    <div class="choose-modal">
+      <div class="choosePlayer">
+        <h1>Welcome to the Roll Dice Game !</h1>
+        <h2>Please enter the names of the players</h2>
+        <div class="labels-players">
+          <div class="label-player">
+            <label for="name-player1">Player 1</label>
+            <input
+              type="text"
+              id="name-player1"
+              name="name-player1"
+              required
+              minlength="2"
+              maxlength="20"
+            />
+          </div>
+          <div class="label-player">
+            <label for="name-player2" class="name-player">Player 2</label>
+            <input
+              type="text"
+              id="name-player2"
+              name="name-player2"
+              required
+              minlength="2"
+              maxlength="20"
+            />
+          </div>
+        </div>
+
+        <button id="modal-play">Play</button>
+      </div>
+    </div>
+
     <div class="main-board">
       <div class="new-game">
         <i class="bi bi-plus-circle" id="new_game"></i> New game

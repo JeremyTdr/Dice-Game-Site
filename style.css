@@ -22,6 +22,8 @@ body {
   justify-content: center;
 }
 
+/*-- GAME BOARD --*/
+
 .main-board {
   width: 95%;
   height: 95%;
@@ -170,8 +172,11 @@ body {
   grid-row: 5;
 }
 
+/*-- MODALS --*/
+
+.choose-modal,
 .win-modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -181,11 +186,13 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.choosePlayer,
 .winner {
-  width: 480px;
+  width: 620px;
   height: auto;
   padding: 20px;
   background-color: #fff;
+  color: #383838;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -195,6 +202,68 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+}
+
+.choosePlayer h1 {
+  font-size: 1.8rem;
+  color: #fa5353;
+}
+
+.choosePlayer h2 {
+  font-size: 1.1rem;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.labels-players {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.label-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-player label {
+  font-size: 1rem;
+}
+
+.choosePlayer input {
+  width: 160px;
+  padding-left: 5px;
+  border: none;
+  border-bottom: 2px solid #fa5353;
+}
+
+.choosePlayer input:focus {
+  outline: none;
+}
+
+#modal-play,
+#modal-newgame {
+  padding: 10px 38px;
+  background-color: #fa5353;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#modal-play {
+  font-size: 1.2rem;
+}
+
+.win-modal {
+  display: none;
+}
+
+.winner {
+  width: 480px;
   gap: 10px;
 }
 
@@ -207,12 +276,4 @@ body {
 
 .winner h2 {
   color: #fa5353;
-}
-
-#modal-newgame {
-  padding: 10px 38px;
-  background-color: #fa5353;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
 }
