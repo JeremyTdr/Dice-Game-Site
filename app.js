@@ -1,8 +1,8 @@
 window.onload = () => {
   /*--- Variables pour les différents éléments du plateau de jeu ---*/
   const newGame = document.getElementById("new_game");
-  let player1 = document.querySelector(".player1");
-  let player2 = document.querySelector(".player2");
+  let player1 = document.querySelector(".player1 p");
+  let player2 = document.querySelector(".player2 p");
   const player = document.querySelectorAll(".player");
   let globalPlayers = document.querySelectorAll(".player-score");
   let dice = document.querySelector(".dice-img");
@@ -14,6 +14,10 @@ window.onload = () => {
   let winnerGame = document.getElementById("winner-game");
   const closeModal = document.querySelector(".close");
   const modalNewGame = document.getElementById("modal-newgame");
+  const chooseModal = document.querySelector(".choose-modal");
+  let namePlayer1 = document.getElementById("name-player1");
+  let namePlayer2 = document.getElementById("name-player2");
+  const playButton = document.getElementById("modal-play");
 
   /*--- Tableau et variable des images du Dé ---*/
   let images = [
@@ -31,9 +35,11 @@ window.onload = () => {
   let globalScoreP2 = 0;
   let currentScore = 0;
   let actualPlayer = 0;
+  let player1_Name, player2_Name;
 
   /*--- Fonction Play ---*/
   const playGame = () => {
+    playersModal();
     initGame();
     playDice();
     holdGame();
@@ -108,7 +114,8 @@ window.onload = () => {
   /*--- Fonction New Game ---*/
   const playNewGame = () => {
     newGame.addEventListener("click", () => {
-      initGame();
+      chooseModal.style.display = "block";
+      playersModal();
     });
   };
 
@@ -129,22 +136,35 @@ window.onload = () => {
     actualPlayer = 1;
   };
 
-  /*--- Fonction Winner Modal & boutons du modal ---*/
+  /*--- Fonction Choose Players Modal ---*/
+  const playersModal = () => {
+    playButton.addEventListener("click", () => {
+      player1_Name = namePlayer1.value;
+      player2_Name = namePlayer2.value;
+      player1.textContent = player1_Name;
+      player2.textContent = player2_Name;
+      initGame();
+      chooseModal.style.display = "none";
+    });
+  };
+
+  /*--- Fonction Winner Modal ---*/
   const winnerModal = () => {
     if (globalScoreP1 >= 20 || globalScoreP2 >= 20) {
       winModal.style.display = "block";
       if (globalScoreP1 >= 20) {
-        winnerGame.textContent = "Player 1 win this game";
+        winnerGame.textContent = `${player1_Name} win this game`;
       } else {
-        winnerGame.textContent = "Player 2 win this game";
+        winnerGame.textContent = `${player2_Name} win this game`;
       }
 
       closeModal.addEventListener("click", () => {
         winModal.style.display = "none";
       });
       modalNewGame.addEventListener("click", () => {
-        initGame();
         winModal.style.display = "none";
+        chooseModal.style.display = "block";
+        playersModal();
       });
     }
   };

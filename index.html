@@ -22,7 +22,10 @@
   <body>
     <div class="choose-modal">
       <div class="choosePlayer">
-        <h1>Welcome to the Roll Dice Game !</h1>
+        <h1>
+          Welcome to the
+          <div id="title">Roll Dice Game</div>
+        </h1>
         <h2>Please enter the names of the players</h2>
         <div class="labels-players">
           <div class="label-player">
@@ -31,9 +34,9 @@
               type="text"
               id="name-player1"
               name="name-player1"
-              required
               minlength="2"
               maxlength="20"
+              required
             />
           </div>
           <div class="label-player">
@@ -42,9 +45,9 @@
               type="text"
               id="name-player2"
               name="name-player2"
-              required
               minlength="2"
               maxlength="20"
+              required
             />
           </div>
         </div>
@@ -57,11 +60,13 @@
       <div class="new-game">
         <i class="bi bi-plus-circle" id="new_game"></i> New game
       </div>
-      <div class="player1">
-        Player 1 <i class="player bi bi-record-fill active"></i>
+      <div class="player1 name">
+        <p>Player 1</p>
+        <i class="player bi bi-record-fill active"></i>
       </div>
-      <div class="player2">
-        Player 2 <i class="player bi bi-record-fill"></i>
+      <div class="player2 name">
+        <p>Player 2</p>
+        <i class="player bi bi-record-fill"></i>
       </div>
       <div class="player-score one active">0</div>
       <div class="dice">
