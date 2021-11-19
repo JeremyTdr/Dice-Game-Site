@@ -8,6 +8,9 @@ window.onload = () => {
   const rollDice = document.getElementById("roll-dice");
   const holdDice = document.getElementById("hold-dice");
   const mainBoard = document.querySelector(".main-board");
+  const winModal = document.querySelector(".win-modal");
+  const closeModal = document.querySelector(".close");
+  const modalNewGame = document.getElementById("modal-newgame");
 
   /*--- Tableau et variable des images du Dé ---*/
   let images = [
@@ -95,6 +98,7 @@ window.onload = () => {
         currentPlayers[1].textContent = currentScore;
         switchToPlayer1();
       }
+      winnerModal();
     });
   };
 
@@ -120,6 +124,20 @@ window.onload = () => {
     mainBoard.style.background =
       "linear-gradient(270deg, #cccccc 50%, #ffffff 50%)";
     actualPlayer = 1;
+  };
+
+  /*--- Fonction Winner Modal & boutons du modal ---*/
+  const winnerModal = () => {
+    if (globalScoreP1 >= 20 || globalScoreP2 >= 20) {
+      winModal.style.display = "block";
+      closeModal.addEventListener("click", () => {
+        winModal.style.display = "none";
+      });
+      modalNewGame.addEventListener("click", () => {
+        initGame();
+        winModal.style.display = "none";
+      });
+    }
   };
 
   playGame();
