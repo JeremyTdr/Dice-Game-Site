@@ -169,3 +169,50 @@ body {
   grid-column: 3;
   grid-row: 5;
 }
+
+.win-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.winner {
+  width: 480px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.bi.bi-x-square {
+  color: #fa5353;
+  align-self: flex-end;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.winner h2 {
+  color: #fa5353;
+}
+
+#modal-newgame {
+  padding: 10px 38px;
+  background-color: #fa5353;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
