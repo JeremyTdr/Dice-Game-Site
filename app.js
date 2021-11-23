@@ -150,7 +150,7 @@ window.onload = () => {
 
   /*--- Fonction Winner Modal ---*/
   const winnerModal = () => {
-    if (globalScoreP1 >= 20 || globalScoreP2 >= 20) {
+    if (globalScoreP1 >= 100 || globalScoreP2 >= 100) {
       winModal.style.display = "block";
       if (globalScoreP1 >= 20) {
         winnerGame.textContent = `${player1_Name} win this game`;
