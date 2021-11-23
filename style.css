@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
 
 body {
+  width: 100vw;
   height: 100vh;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
@@ -214,6 +215,7 @@ body {
 .choosePlayer h1 {
   font-size: 1.8rem;
   text-transform: none;
+  text-align: center;
 }
 
 #title {
@@ -226,6 +228,7 @@ body {
   font-size: 1.1rem;
   text-transform: none;
   font-weight: 300;
+  text-align: center;
 }
 
 .labels-players {
@@ -288,4 +291,30 @@ body {
 
 .winner h2 {
   color: #fa5353;
+}
+
+@media screen and (max-width: 768px) {
+  .choosePlayer,
+  .winner {
+    width: 420px;
+  }
+
+  .labels-players {
+    gap: 50px;
+  }
+
+  .choosePlayer input {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .choosePlayer,
+  .winner {
+    width: 300px;
+  }
+
+  .choosePlayer input {
+    width: 100px;
+  }
 }
