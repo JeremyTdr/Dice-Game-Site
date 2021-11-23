@@ -213,11 +213,13 @@ body {
 
 .choosePlayer h1 {
   font-size: 1.8rem;
+  text-transform: none;
 }
 
 #title {
   display: inline;
   color: #fa5353;
+  text-transform: uppercase;
 }
 
 .choosePlayer h2 {
