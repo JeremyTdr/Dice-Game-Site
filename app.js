@@ -152,7 +152,7 @@ window.onload = () => {
   const winnerModal = () => {
     if (globalScoreP1 >= 100 || globalScoreP2 >= 100) {
       winModal.style.display = "block";
-      if (globalScoreP1 >= 20) {
+      if (globalScoreP1 >= 100) {
         winnerGame.textContent = `${player1_Name} win this game`;
       } else {
         winnerGame.textContent = `${player2_Name} win this game`;

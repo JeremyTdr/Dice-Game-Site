@@ -21,13 +21,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /*-- GAME BOARD --*/
 
 .main-board {
-  width: 95%;
-  height: 95%;
+  width: 90%;
+  height: 90%;
   background: linear-gradient(90deg, #cccccc 50%, #ffffff 50%);
   display: grid;
   grid-template-columns: 10% 30% 20% 30% 10%;
@@ -349,6 +350,7 @@ body {
   width: 160px;
   padding-left: 5px;
   border: none;
+  border-radius: 0px;
   border-bottom: 2px solid #fa5353;
 }
 
