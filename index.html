@@ -38,29 +38,17 @@
           <div id="title">Roll Dice Game</div>
         </h1>
         <h2>Please enter the names of the players</h2>
-        <form action="" method="get">
-          <div class="labels-players">
-            <div class="label-player">
-              <label for="name-player1">Player 1</label>
-              <input
-                type="text"
-                name="name-player1"
-                id="name-player1"
-                required
-              />
-            </div>
-            <div class="label-player">
-              <label for="name-player2">Player 2</label>
-              <input
-                type="text"
-                name="name-player2"
-                id="name-player2"
-                required
-              />
-            </div>
+        <div class="labels-players">
+          <div class="label-player">
+            <label for="name-player1">Player 1</label>
+            <input type="text" name="name-player1" id="name-player1" required />
           </div>
-          <input type="submit" value="Play" id="modal-play" />
-        </form>
+          <div class="label-player">
+            <label for="name-player2">Player 2</label>
+            <input type="text" name="name-player2" id="name-player2" required />
+          </div>
+        </div>
+        <button id="modal-play">Play</button>
       </div>
     </div>
 
