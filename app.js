@@ -139,9 +139,17 @@ window.onload = () => {
   /*--- Fonction Choose Players Modal ---*/
   const playersModal = () => {
     playButton.addEventListener("click", () => {
-      player1_Name = namePlayer1.value;
-      player2_Name = namePlayer2.value;
+      if (namePlayer1.value == "") {
+        player1_Name = "Player 1";
+      } else {
+        player1_Name = namePlayer1.value;
+      }
       player1.textContent = player1_Name;
+      if (namePlayer2.value == "") {
+        player2_Name = "Player 2";
+      } else {
+        player2_Name = namePlayer2.value;
+      }
       player2.textContent = player2_Name;
       initGame();
       chooseModal.style.display = "none";
