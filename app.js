@@ -124,7 +124,7 @@ window.onload = () => {
     player[1].classList.remove("active");
     player[0].classList.add("active");
     mainBoard.style.background =
-      "linear-gradient(90deg, #cccccc 50%, #ffffff 50%)";
+      "linear-gradient(90deg, #e7e7e7 50%, #ffffff 50%)";
     actualPlayer = 0;
   };
 
@@ -132,7 +132,7 @@ window.onload = () => {
     player[0].classList.remove("active");
     player[1].classList.add("active");
     mainBoard.style.background =
-      "linear-gradient(270deg, #cccccc 50%, #ffffff 50%)";
+      "linear-gradient(270deg, #e7e7e7 50%, #ffffff 50%)";
     actualPlayer = 1;
   };
 
