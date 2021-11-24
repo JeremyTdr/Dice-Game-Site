@@ -309,6 +309,12 @@ body {
   gap: 30px;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .choosePlayer h1 {
   font-size: 1.8rem;
   text-transform: none;
@@ -368,6 +374,8 @@ body {
 }
 
 #modal-play {
+  margin: 30px auto 0;
+  text-align: center;
   font-size: 1.2rem;
 }
 
@@ -414,5 +422,9 @@ body {
 
   .choosePlayer input {
     width: 100px;
+  }
+
+  #modal-play {
+    width: 100%;
   }
 }
